@@ -10,6 +10,8 @@ Here, each individual's implementation of Array Priority Queue is detailed with 
 <br><br>
 **These are also aspects we all agreed on in our original implementations:**
 <br>
+<br>
+
 | George | Josh | Larry | <br>
 | ------ | ---- | ----- | <br>
 | testing | testing | 123 | <br>
