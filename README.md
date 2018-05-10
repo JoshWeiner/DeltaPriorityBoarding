@@ -6,13 +6,13 @@ Larry Wong
 George Liang
 
 ## v1 Implementations
-**Here, each individual's implementation of Array Priority Queue is detailed with explanations**
+**Here, each individual's implementation of Array Priority Queue is detailed with explanations:**
 <br>
 
 | gliang | jweiner | lwong |
 | --- | --- | --- |
 | testing | **public void add(String str)** <br> The add method runs in O(1) time as specified by the Java API for ArrayPriorityQueues. This was done with the following design consideration: my queue is unsorted and does not sort Strings as they are added to the array. Instead, new Strings are added at the end of the ArrayPriorityQueue, which enables the method to run in constant time. | 123 |
-|   | **public String peekMin()** <br> The peekMin() method runs in O(n) time as specified by the Java API for ArrayPriorityQueues. This was done because our APQ implementation is unordered. Therefore, my peekMin() method runs in O(n) time in the worst case as it traverses the entire queue to find the minimum value. This method will run an average time of O(n). |   |
+|   | **public String peekMin()** <br> <ul><li>The peekMin() method runs in O(n) time as specified by the Java API for ArrayPriorityQueues. This was done because our APQ implementation is unordered. Therefore, my peekMin() method runs in O(n) time in the worst case as it traverses the entire queue to find the minimum value. This method will run an average time of O(n).</li></ul> |   |
 
 
 # Characterizing The Time Complexity
