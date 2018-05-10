@@ -13,7 +13,8 @@ Here, each individual's implementation of Array Priority Queue is detailed with 
 
 | George | Josh | Larry |
 | --- | --- | --- |
-| testing | testing | 123 |
+| testing | **public void add(String str)** <br> > The add method runs in O(1) time as specified by the Java API for ArrayPriorityQueues. This was done with the following design consideration: our array is unsorted and does not sort Strings as they are added to the array. Instead, new Strings are added at the end of the ArrayPriorityQueue, which enables the method to run in constant time. | 123 |
+
 
 # Characterizing The Time Complexity
 We followed the API in order to implement our ArrayPriorityQueue
