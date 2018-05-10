@@ -4,6 +4,14 @@ Joshua Weiner
 Larry Wong
 <br>
 George Liang
+
+## v1 Implementations
+Here, each individual's implementation of Array Priority Queue is detailed with explanations
+<br><br>
+**These are also aspects we all agreed on in our original implementations:**
+<br>
+| George | Josh | Larry |
+|--------|------|-------|
 # Characterizing The Time Complexity
 We followed the API in order to implement our ArrayPriorityQueue
 ## add(String) v2
