@@ -10,11 +10,11 @@ Here, each individual's implementation of Array Priority Queue is detailed with 
 <br><br>
 **These are also aspects we all agreed on in our original implementations:**
 <br>
-<br>
 
-| George | Josh | Larry | <br>
-| ------ | ---- | ----- | <br>
-| testing | testing | 123 | <br>
+| George | Josh | Larry |
+| --- | --- | --- |
+| testing | testing | 123 |
+
 # Characterizing The Time Complexity
 We followed the API in order to implement our ArrayPriorityQueue
 ## add(String) v2
