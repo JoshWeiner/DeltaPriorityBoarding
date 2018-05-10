@@ -6,9 +6,7 @@ Larry Wong
 George Liang
 
 ## v1 Implementations
-Here, each individual's implementation of Array Priority Queue is detailed with explanations
-<br><br>
-**These are also aspects we all agreed on in our original implementations:**
+**Here, each individual's implementation of Array Priority Queue is detailed with explanations**
 <br>
 
 | gliang | jweiner | lwong |
