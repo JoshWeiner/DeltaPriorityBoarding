@@ -1,10 +1,5 @@
 /*
-  Joshua Weiner
-  APCS2 - pd08
-  HW #46: Arrr, There Be Priorities Here Matey . . .
-  2018 - 05 - 09
-*/
-
+Team DeltaPriorityBoarding: George Liang, Joshua Weiner, Larry Wong
 /*****************************************************
  * class ArrayPriorityQueue
  * An ArrayList based, prioritized queue
@@ -25,7 +20,7 @@ public class ArrayPriorityQueue implements PriorityQueue{
      * precondition:  given a String
      * postcondition: _data adds at the end
      * O(1) - independent of other elements
-     **********************************************************/   
+     **********************************************************/
     public void add(String x){
 	queue.add(x);
     }
