@@ -1,9 +1,7 @@
 /*
-  Joshua Weiner
-  APCS2 - pd08
-  HW #46: Arrr, There Be Priorities Here Matey . . .
-  2018 - 05 - 09
-*/
+Team DeltaPriorityBoarding: George Liang, Joshua Weiner, Larry Wong
+APCS2 - pd08
+v2
 
 /*****************************************************
  * class ArrayPriorityQueue
