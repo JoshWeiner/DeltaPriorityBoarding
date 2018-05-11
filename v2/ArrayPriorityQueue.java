@@ -1,9 +1,14 @@
 /*
-Team DeltaPriorityBoarding: George Liang, Joshua Weiner, Larry Wong
+  Joshua Weiner
+  APCS2 - pd08
+  HW #46: Arrr, There Be Priorities Here Matey . . .
+  2018 - 05 - 09
+*/
+
 /*****************************************************
  * class ArrayPriorityQueue
  * An ArrayList based, prioritized queue
- * Hold Strings and compares them
+ * Queues Strings in the order in which they were and compares them
  ******************************************************/
 
 import java.util.ArrayList;
