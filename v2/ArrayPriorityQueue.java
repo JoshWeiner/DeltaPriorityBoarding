@@ -21,7 +21,7 @@ public class ArrayPriorityQueue implements PriorityQueue{
 
     /**********************************************************
      * precondition:  given a String
-     * postcondition: _data adds at the end
+     * postcondition: adds at the end of queue
      * O(1) - independent of other elements
      **********************************************************/
     public void add(String x){
@@ -29,7 +29,7 @@ public class ArrayPriorityQueue implements PriorityQueue{
     }
 
     /**********************************************************
-     * precondition:  _data is not null
+     * precondition:  queue is not null
      * postcondition: returns true if size is 0, else return true
      * O(1) - independent of other elements
      **********************************************************/
@@ -38,7 +38,7 @@ public class ArrayPriorityQueue implements PriorityQueue{
     }
 
     /**********************************************************
-     * precondition:  _data.size() > 0
+     * precondition:  queue is not null
      * postcondition: returns the minimum string
      * O(n) - traverses through all elements using reign-of-champion
      **********************************************************/
@@ -47,8 +47,8 @@ public class ArrayPriorityQueue implements PriorityQueue{
     }
 
     /**********************************************************
-     * precondition:  _data.size() > 0
-     * postcondition: removes the minimum string and returns the minimum string
+     * precondition:  queue.size() > 0
+     * postcondition: returns the minimum string w/o altering queue
      * O(n) - traverses through all elements using reign-of-champion
      **********************************************************/
     public String peekMin(){
@@ -66,8 +66,11 @@ public class ArrayPriorityQueue implements PriorityQueue{
 	return retStr;
     }
 
-    //Returns and removes the minimum value of the PriorityQueue
-    //Runtime: O(n)
+    /**********************************************************
+     * precondition:  queue.size() > 0
+     * postcondition: removes the minimum string and returns the minimum string
+     * O(n) - traverses through all elements using reign-of-champion
+     **********************************************************/
     public String removeMin(){
 	String retStr = queue.get(0);
 	int indexToRemove = 0;
@@ -88,6 +91,12 @@ public class ArrayPriorityQueue implements PriorityQueue{
 	return retStr;
     }
 
+    /**********************************************************
+     * precondition:  queue exists
+     * postcondition: returns a string with all elements in the queue (not in priority queue)
+     		      used for debugging
+     * O(n) - traverses through all elements
+     **********************************************************/
     public String toString(){
 	String retStr = "[";
 	for(String item: queue){
