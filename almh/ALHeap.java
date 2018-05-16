@@ -33,6 +33,7 @@ public class ALHeap
   * a) a level-order traversal of the tree (simple version)
   * b) ASCII representation of the tree (more complicated, more fun)
   *****************************************************/
+  /* Linear, but not level-order
   public String toString()
   {
     String str = "";
@@ -41,6 +42,46 @@ public class ALHeap
     }
     return str;
   }//O(?)
+  */
+
+  //Not linear, but (almost) level.
+  public String toString()
+  {
+    String retStr = "";
+    if (isEmpty())
+      return retStr;
+    else {
+      return _heap.get(1) + recursiveToString(1, true);
+    }
+  }//O(?)
+
+  private String recursiveToString(int pos, boolean isLeft) {
+    //pos is parent node
+    String retStr = System.lineSeparator();
+    String leftStr = "";
+    String rightStr = "";
+
+    int leftChild = pos * 2;
+    int rightChild = pos * 2 + 1;
+
+    if (leftChild < _heap.size()) {
+      leftStr += _heap.get(leftChild);
+      if (rightChild < _heap.size()) {
+         rightStr += _heap.get(rightChild);
+      }
+    }
+    retStr += leftStr + " " + rightStr;
+
+      if (leftChild < _heap.size()) {
+        retStr += recursiveToString(leftChild, true);
+        if (rightChild < _heap.size()) {
+           recursiveToString(rightChild, false);
+        }
+      }
+    return retStr;
+  }
+
+
 
 
   /*****************************************************
@@ -112,8 +153,24 @@ public class ALHeap
   *****************************************************/
   private int minChildPos( int pos )
   {
+    if (pos == 0) {
+      int leftChild = 1;
+      int rightChild = 2;
+    }
+    else {
+      int leftChild = pos * 2;
+      int rightChild = pos * 2 + 1;
+    }
+
+    //does the heap contain the children of the parent node
+    if (_heap.size() < rightChild) {
+      if (_heap.get(leftChild) < _heap.get(rightChild))
+        return leftChild;
+      else
+        return rightChild;
+    }
     return -1;
-  }//O(?)
+  }//O(1)
 
 
   //************ aux helper fxns ***************
