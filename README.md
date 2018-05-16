@@ -34,5 +34,6 @@ The average runtime of this is O(n), with a worst case of O(n).
 - Make sure we have a toString in order to verify our heap works
 - implement isEmpty()
 - implement add method
-- implement minChildpos
+- implement minChildPos
+- implement peekMin()
 - implement removeMin()
