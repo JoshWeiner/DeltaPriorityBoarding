@@ -4,6 +4,8 @@ Joshua Weiner
 Larry Wong
 <br>
 George Liang
+<br>
+Ryan Kim
 
 ## v1 Implementations
 **Here, each individual's implementation of Array Priority Queue is detailed with explanations:**
