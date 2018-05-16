@@ -33,53 +33,33 @@ public class ALHeap
      * a) a level-order traversal of the tree (simple version)
      * b) ASCII representation of the tree (more complicated, more fun)
      *****************************************************/
-    /* Linear, but not level-order
-       public String toString()
-       {
-       String str = "";
-       for (Integer node : _heap){
-       str += node + " ";
-       }
-       return str;
-       }//O(?)
-    */
-
-    //Not linear, but (almost) level.
+    //Linear, but not level-order
     public String toString()
     {
-	String retStr = "";
-	if (isEmpty())
-	    return retStr;
-	else {
-	    return _heap.get(0) + recursiveToString(1, true); //TODO: fix toString
-	}
+      String str = "";
+
+      int level = 0;
+      int index = 0;
+      int inLevel = 0;
+
+      while (index < _heap.size()) {
+        int numInLevel = (int)Math.pow(2,level);
+
+        if (inLevel < numInLevel) {
+          str += _heap.get(index) + " ";
+          inLevel ++;
+          index ++;
+        }
+
+        else {
+          inLevel = 0;
+          str += System.lineSeparator();
+          level ++;
+        }
+      }
+      return str;
+
     }//O(?)
-
-    private String recursiveToString(int pos, boolean isLeft) {
-	//pos is parent node
-	String retStr = System.lineSeparator();
-	String leftStr = "";
-	String rightStr = "";
-
-	int leftChild = pos * 2;
-	int rightChild = pos * 2 + 1;
-
-	if (leftChild < _heap.size()) {
-	    leftStr += _heap.get(leftChild);
-	    if (rightChild < _heap.size()) {
-		rightStr += _heap.get(rightChild);
-	    }
-	}
-	retStr += leftStr + " " + rightStr;
-
-	if (leftChild < _heap.size()) {
-	    retStr += recursiveToString(leftChild, true);
-	    if (rightChild < _heap.size()) {
-		recursiveToString(rightChild, false);
-	    }
-	}
-	return retStr;
-    }
 
 
 
@@ -126,7 +106,8 @@ public class ALHeap
 	while (pos > 0 && _heap.get( pos ).compareTo(_heap.get( (pos-1)/2 )) < 0) {
 	    swap(pos, (pos-1)/2);
 	    pos = (pos-1)/2;
-	}
+      
+
     }//O(?)
 
 
