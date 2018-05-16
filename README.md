@@ -29,7 +29,7 @@ The average runtime of this is O(n), with a worst case of O(n).
 Similar to peekMin(), this method has a time complexity of O(n) because it traverses through all the elements in the queue to find and return the minimum value and uses the built-in ArrayList method to remove that element. This is consistent with the API. <br>
 The average runtime of this is O(n), with a worst case of O(n).
 
-#heap todo
+# heap todo
 - Create a constructor so that we have a heap to begin with.
 - Make sure we have a toString in order to verify our heap works
 - implement isEmpty()
