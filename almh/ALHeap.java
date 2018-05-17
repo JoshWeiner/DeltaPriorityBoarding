@@ -57,6 +57,7 @@ public class ALHeap
           level ++;
         }
       }
+      System.out.println();
       return str;
 
     }//O(?)
@@ -106,7 +107,7 @@ public class ALHeap
 	while (pos > 0 && _heap.get( pos ).compareTo(_heap.get( (pos-1)/2 )) < 0) {
 	    swap(pos, (pos-1)/2);
 	    pos = (pos-1)/2;
-      
+	}
 
     }//O(?)
 
@@ -124,7 +125,42 @@ public class ALHeap
     *****************************************************/
     public Integer removeMin()
     {
-	return null;
+	int temp,pos ,level,leftIndex,rightIndex;
+	ArrayList<Integer> cleanHeap = new ArrayList<Integer>();
+
+	if(isEmpty()){
+	    return null;
+	}
+	leftIndex = 1;
+	rightIndex = 2;
+	temp = _heap.get(0);
+	_heap.set(0,null);
+	swap(0,_heap.size() - 1);
+	pos = 0;
+	leftIndex = 1;
+	rightIndex = 2;
+	while(!(leftIndex >= _heap.size()) ||!( rightIndex >= _heap.size())){
+	    if (_heap.get(leftIndex) == null || _heap.get(rightIndex) == null){
+		break;
+	      }
+	    if(minOf(_heap.get(leftIndex),_heap.get(rightIndex))==_heap.get(leftIndex)){
+		swap(pos,leftIndex);
+		pos = leftIndex;
+		rightIndex = pos * 2 + 2;
+		leftIndex = pos * 2 + 1;
+	    }
+	    else{
+		swap(pos,rightIndex);
+		pos = rightIndex;
+		rightIndex = pos * 2 + 2;
+		leftIndex = pos * 2 + 1;
+	    }
+	}
+	for (int x = 0; x < _heap.size() - 1; x++){
+	    cleanHeap.add(x,_heap.get(x)); 
+	}
+	_heap = cleanHeap;
+	return temp;
     }//O(?)
 
 
@@ -202,7 +238,7 @@ public class ALHeap
 	System.out.println(pile);
 	pile.add(9);
 	System.out.println(pile);
-	/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 	  System.out.println("removing " + pile.removeMin() + "...");
 	  System.out.println(pile);
 	  System.out.println("removing " + pile.removeMin() + "...");
@@ -225,7 +261,7 @@ public class ALHeap
 	  System.out.println(pile);
 	  System.out.println("removing " + pile.removeMin() + "...");
 	  System.out.println(pile);
-	  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
     }//end main()
 
 }//end class ALHeap
