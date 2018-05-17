@@ -22,7 +22,7 @@ public class ALHeap
      *****************************************************/
     public ALHeap()
     {
-	_heap = new ArrayList<Integer>();
+	     _heap = new ArrayList<Integer>();
     }
 
 
@@ -33,7 +33,7 @@ public class ALHeap
      * a) a level-order traversal of the tree (simple version)
      * b) ASCII representation of the tree (more complicated, more fun)
      *****************************************************/
-    //Linear, but not level-order
+    //Level order, but not with ASCII values yet. Nodes are, however, sepatated by level
     public String toString()
     {
       String str = "";
@@ -60,7 +60,7 @@ public class ALHeap
       System.out.println();
       return str;
 
-    }//O(?)
+    }//O(n)
 
 
 
@@ -71,7 +71,7 @@ public class ALHeap
      *****************************************************/
     public boolean isEmpty()
     {
-	return _heap.size() == 0;
+	     return _heap.size() == 0;
     }//O(1)
 
 
@@ -82,9 +82,9 @@ public class ALHeap
      *****************************************************/
     public Integer peekMin()
     {
-	if ( isEmpty() )
-	    { return null; }
-	return _heap.get(0);
+	     if ( isEmpty() )
+	      { return null; }
+	     return _heap.get(0);
     }//O(1)
 
 
@@ -93,23 +93,27 @@ public class ALHeap
      * Inserts an element in the heap
      * Postcondition: Tree exhibits heap property.
      * Algo:
-  1) Add the new element to an available spot on the bottom row (as a leaf)
-  2) Check to see if this element is ordered with respect to its parent
-  3) If not, swap with the parent else the element remains there
-  4) Repeat steps 2-3 until the element can no longer swap
+     1) Add the new element to an available spot on the bottom row (as a leaf)
+     2) Check to see if this element is ordered with respect to its parent
+     3) If not, swap with the parent else the element remains there
+     4) Repeat steps 2-3 until the element can no longer swap
 
     *****************************************************/
     public void add( Integer addVal )
     {
-	_heap.add(addVal);
-	int pos = _heap.size()-1;
+      _heap.add(addVal);
 
-	while (pos > 0 && _heap.get( pos ).compareTo(_heap.get( (pos-1)/2 )) < 0) {
-	    swap(pos, (pos-1)/2);
-	    pos = (pos-1)/2;
-	}
+      int max = _heap.size()-1;
 
-    }//O(?)
+      for (int pos = max; pos > 0; pos = (int)Math.floor((pos-1)/2) ) {
+        int tempVal = _heap.get(pos);
+        int parentIndex = (int)Math.floor((pos-1)/2);
+        int parent = _heap.get(parentIndex);
+
+        if (tempVal < parent)
+          swap(pos, parentIndex);
+      }
+    }//O(logn)
 
 
     /*****************************************************
@@ -157,7 +161,7 @@ public class ALHeap
 	    }
 	}
 	for (int x = 0; x < _heap.size() - 1; x++){
-	    cleanHeap.add(x,_heap.get(x)); 
+	    cleanHeap.add(x,_heap.get(x));
 	}
 	_heap = cleanHeap;
 	return temp;
