@@ -30,8 +30,7 @@ public class ALHeap
     /*****************************************************
      * toString()  ---  overrides inherited method
      * Returns either
-     * a) a level-order traversal of the tree (simple version)
-     * b) ASCII representation of the tree (more complicated, more fun)
+     * a level-order traversal of the tree (simple version)
      *****************************************************/
     //Level order, but not with ASCII values yet. Nodes are, however, sepatated by level
     public String toString()
