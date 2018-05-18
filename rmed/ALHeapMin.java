@@ -22,10 +22,8 @@ public class ALHeapMin
      *****************************************************/
     public ALHeapMin()
     {
-	     _heap = new ArrayList<Integer>();
+	_heap = new ArrayList<Integer>();
     }
-
-
 
     /*****************************************************
      * toString()  ---  overrides inherited method
@@ -35,29 +33,29 @@ public class ALHeapMin
     //Level order, but not with ASCII values yet. Nodes are, however, sepatated by level
     public String toString()
     {
-      String str = "";
+	String str = "";
 
-      int level = 0;
-      int index = 0;
-      int inLevel = 0;
+	int level = 0;
+	int index = 0;
+	int inLevel = 0;
 
-      while (index < _heap.size()) {
-        int numInLevel = (int)Math.pow(2,level);
+	while (index < _heap.size()) {
+	    int numInLevel = (int)Math.pow(2,level);
 
-        if (inLevel < numInLevel) {
-          str += _heap.get(index) + " ";
-          inLevel ++;
-          index ++;
-        }
+	    if (inLevel < numInLevel) {
+		str += _heap.get(index) + " ";
+		inLevel ++;
+		index ++;
+	    }
 
-        else {
-          inLevel = 0;
-          str += System.lineSeparator();
-          level ++;
-        }
-      }
-      System.out.println();
-      return str;
+	    else {
+		inLevel = 0;
+		str += System.lineSeparator();
+		level ++;
+	    }
+	}
+	System.out.println();
+	return str;
 
     }//O(n)
 
@@ -70,7 +68,7 @@ public class ALHeapMin
      *****************************************************/
     public boolean isEmpty()
     {
-	     return _heap.size() == 0;
+	return _heap.size() == 0;
     }//O(1)
 
 
@@ -81,9 +79,9 @@ public class ALHeapMin
      *****************************************************/
     public Integer peekMin()
     {
-	     if ( isEmpty() )
-	      { return null; }
-	     return _heap.get(0);
+	if ( isEmpty() )
+	    { return null; }
+	return _heap.get(0);
     }//O(1)
 
 
@@ -96,22 +94,21 @@ public class ALHeapMin
      2) Check to see if this element is ordered with respect to its parent
      3) If not, swap with the parent else the element remains there
      4) Repeat steps 2-3 until the element can no longer swap
-
     *****************************************************/
     public void add( Integer addVal )
     {
-      _heap.add(addVal);
+	_heap.add(addVal);
 
-      int max = _heap.size()-1;
+	int max = _heap.size()-1;
 
-      for (int pos = max; pos > 0; pos = (int)Math.floor((pos-1)/2) ) {
-        int tempVal = _heap.get(pos);
-        int parentIndex = (int)Math.floor((pos-1)/2);
-        int parent = _heap.get(parentIndex);
+	for (int pos = max; pos > 0; pos = (int)Math.floor((pos-1)/2) ) {
+	    int tempVal = _heap.get(pos);
+	    int parentIndex = (int)Math.floor((pos-1)/2);
+	    int parent = _heap.get(parentIndex);
 
-        if (tempVal < parent)
-          swap(pos, parentIndex);
-      }
+	    if (tempVal < parent)
+		swap(pos, parentIndex);
+	}
     }//O(logn)
 
 
@@ -124,7 +121,6 @@ public class ALHeapMin
   2) Go to the node that is farthest right at the lowest level in the current half of the tree and swap that element in
   3) Compare with all the children left and right, then replace the current element with the child that is smaller so that child is promoted as a parent.
   4) Repeat steps 2-3 until the held element from 2 has no child node therefore can no longer swap
-
     *****************************************************/
     public Integer removeMin()
     {
@@ -142,10 +138,11 @@ public class ALHeapMin
 	pos = 0;
 	leftIndex = 1;
 	rightIndex = 2;
+
 	while(!(leftIndex >= _heap.size()) ||!( rightIndex >= _heap.size())){
 	    if (_heap.get(leftIndex) == null || _heap.get(rightIndex) == null){
 		break;
-	      }
+	    }
 	    if(minOf(_heap.get(leftIndex),_heap.get(rightIndex))==_heap.get(leftIndex)){
 		swap(pos,leftIndex);
 		pos = leftIndex;
@@ -242,28 +239,28 @@ public class ALHeapMin
 	pile.add(9);
 	System.out.println(pile);
 
-	  System.out.println("removing " + pile.removeMin() + "...");
-	  System.out.println(pile);
-	  System.out.println("removing " + pile.removeMin() + "...");
-	  System.out.println(pile);
-	  System.out.println("removing " + pile.removeMin() + "...");
-	  System.out.println(pile);
-	  System.out.println("removing " + pile.removeMin() + "...");
-	  System.out.println(pile);
-	  System.out.println("removing " + pile.removeMin() + "...");
-	  System.out.println(pile);
-	  System.out.println("removing " + pile.removeMin() + "...");
-	  System.out.println(pile);
-	  System.out.println("removing " + pile.removeMin() + "...");
-	  System.out.println(pile);
-	  System.out.println("removing " + pile.removeMin() + "...");
-	  System.out.println(pile);
-	  System.out.println("removing " + pile.removeMin() + "...");
-	  System.out.println(pile);
-	  System.out.println("removing " + pile.removeMin() + "...");
-	  System.out.println(pile);
-	  System.out.println("removing " + pile.removeMin() + "...");
-	  System.out.println(pile);
+	System.out.println("removing " + pile.removeMin() + "...");
+	System.out.println(pile);
+	System.out.println("removing " + pile.removeMin() + "...");
+	System.out.println(pile);
+	System.out.println("removing " + pile.removeMin() + "...");
+	System.out.println(pile);
+	System.out.println("removing " + pile.removeMin() + "...");
+	System.out.println(pile);
+	System.out.println("removing " + pile.removeMin() + "...");
+	System.out.println(pile);
+	System.out.println("removing " + pile.removeMin() + "...");
+	System.out.println(pile);
+	System.out.println("removing " + pile.removeMin() + "...");
+	System.out.println(pile);
+	System.out.println("removing " + pile.removeMin() + "...");
+	System.out.println(pile);
+	System.out.println("removing " + pile.removeMin() + "...");
+	System.out.println(pile);
+	System.out.println("removing " + pile.removeMin() + "...");
+	System.out.println(pile);
+	System.out.println("removing " + pile.removeMin() + "...");
+	System.out.println(pile);
 
     }//end main()
 
