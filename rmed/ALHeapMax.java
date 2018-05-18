@@ -209,6 +209,11 @@ public class ALHeapMax
     {
 	_heap.set( pos1, _heap.set( pos2, _heap.get(pos1) ) );
     }
+
+    public int size ()
+    {
+	return this.size();
+    }
     //********************************************
 
 
