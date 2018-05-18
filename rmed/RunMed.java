@@ -1,4 +1,5 @@
-public class RunMed.java {
+import java.util.NoSuchElementException;
+public class RunMed {
 
   private ArrayList<Integer> nums;
   private ALMaxHeap lowerInts;
