@@ -12,9 +12,7 @@ public class RunMed.java {
 
   /*
   add() Preconditions:
-    * @param lowerInts is a max-heap, with the highest integer in the heap at the root
-    * @param upperInts is a min-heap, with the lowest integer at the top of the heat at the root
-    * @param ints is an ArrayList of integers
+    * @param num is the integer to be added to the arrays
   */
   public void add(int num) {
     if (num < lowerInts[0]) {
@@ -34,18 +32,34 @@ public class RunMed.java {
       }
     }
 
+  } //O (n^2)
+
+  public int getMedian() {
+
+    if (lowerInts.isEmpty() && upperInts.isEmpty()) {
+      return -1;
+    }
+    else if (lowerInts.isEmpty()) {
+      return upperInts.get(0);
+    }
+    else if (upperInts.isEmpty()) {
+      return lowerInts.get(0);
+    }
+    else {
+      if (upperInts.size() > lowerInts.size()) {
+        return upperInts.get(0);
+      }
+      else if (lowerInts.size() > upperInts.size()) {
+        return lowerInts.get(0);
+      }
+      else
+        return (lowerInts.get(0) + upperInts.get(0)) / 2;
+    }
   }
 
 
-  /*
-  Preconditions:
-    * @param lowerInts is a max-heap, with the highest integer in the heap at the root
-    * @param upperInts is a min-heap, with the lowest integer at the top of the heat at the root
-    * @param ints is an ArrayList of integers
-  */
 
   public static void main(String[] args) {
-
   }
 
 }
