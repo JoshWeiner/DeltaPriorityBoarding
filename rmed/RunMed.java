@@ -3,12 +3,12 @@ import java.util.ArrayList;
 public class RunMed {
 
   private ArrayList<Integer> nums;
-  private ALMaxHeap lowerInts;
+  private ALHeapMax lowerInts;
   private ALHeapMin upperInts;
 
   public RunMed() {
     nums = new ArrayList<Integer>();
-    lowerInts = new ALMaxHeap();
+    lowerInts = new ALHeapMax();
     upperInts = new ALHeapMin();
   }
 
@@ -17,7 +17,7 @@ public class RunMed {
     * @param num is the integer to be added to the arrays
   */
   public void add(int num) {
-    if (num < lowerInts[0]) {
+      if (num < lowerInts.peekMax()) {
       lowerInts.add(num);
     }
     else
@@ -25,12 +25,12 @@ public class RunMed {
 
     if (lowerInts.size() + 1 < upperInts.size()) {
       while (lowerInts.size() - 1 > upperInts.size()) {
-        upperInts.add(lowerInts.remove(0));
+	  upperInts.add(lowerInts.removeMax());
       }
     }
     else {
       while (upperInts.size() - 1 > lowerInts.size()) {
-        lowerInts.add(upperInts.remove(0));
+	  lowerInts.add(upperInts.removeMin());
       }
     }
 
@@ -42,20 +42,20 @@ public class RunMed {
       return -1;
     }
     else if (lowerInts.isEmpty()) {
-      return upperInts.get(0);
+      return upperInts.peekMin();
     }
     else if (upperInts.isEmpty()) {
-      return lowerInts.get(0);
+      return lowerInts.peekMax();
     }
     else {
       if (upperInts.size() > lowerInts.size()) {
-        return upperInts.get(0);
+        return upperInts.peekMin();
       }
       else if (lowerInts.size() > upperInts.size()) {
-        return lowerInts.get(0);
+        return lowerInts.peekMax();
       }
       else
-        return (lowerInts.get(0) + upperInts.get(0)) / 2;
+        return (lowerInts.peekMax() + upperInts.peekMin()) / 2;
     }
   }
 
