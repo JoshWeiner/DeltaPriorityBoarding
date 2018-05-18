@@ -46,12 +46,10 @@ The average runtime of this is O(n), with a worst case of O(n).
 | **boolean isEmpty()** | O(1) | Returns true if no meaningful elements in heap, false otherwise (e.g. is ArrayList size == 0 ?) |
 | **Integer peekMin()** | O(1) | Returns the root of the heap (the minimum Integer), else return null of heap is empty. The heap remains unchanged. |
 | **void add(Integer)** | O(logn) | Algo:
-     <ul> 
-     <li> 1) Add the new element to an available spot on the bottom row (as a leaf) </i> 
-     <li> 2) Check to see if this element is ordered with respect to its parent </li> 
-     <li> 3) If not, swap with the parent else the element remains there </li> 
-     <li> 4) Repeat steps 2-3 until the element can no longer swap, This means that the tree exhibits heap property</li> 
-    </ul>|
+      - 1) Add the new element to an available spot on the bottom row (as a leaf)
+      - 2) Check to see if this element is ordered with respect to its parent 
+      - 3) If not, swap with the parent else the element remains there 
+      - 4) Repeat steps 2-3 until the element can no longer swap, This means that the tree exhibits heap property. |
 | **Integer removeMin(Integer)** | O(logn) | Algo:
      <ul> 
      <li> 1) Remove the element from the tree creating a hole </i> 
