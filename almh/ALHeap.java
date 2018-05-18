@@ -164,7 +164,7 @@ public class ALHeap
 	}
 	_heap = cleanHeap;
 	return temp;
-    }//O(?)
+    }//O(logn)
 
 
     /*****************************************************
