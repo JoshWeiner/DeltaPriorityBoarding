@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+import java.util.ArrayList;
 public class RunMed {
 
   private ArrayList<Integer> nums;
