@@ -42,6 +42,7 @@ The average runtime of this is O(n), with a worst case of O(n).
 
 | Method | Runtime | Description/Algo | Types |
 | --- | --- | --- | --- |
+| **int getSize()** | O(1) | Returns the size of the heap by returning the size of the underlying container. | <ul><li> Same in both Min and Max heaps </li></ul> |
 | **String toString()** | O(n) | Returns a level-order traversal of the heap. Nodes are separated by level. | <ul><li> Same in both Min and Max heaps </li></ul> |
 | **boolean isEmpty()** | O(1) | Returns true if no meaningful elements in heap, false otherwise (e.g. is ArrayList size == 0 ?) | <ul><li> Same in both Min and Max heaps </li></ul> |
 | **Integer peek()** | O(1) | Returns the root of the heap, else return null of heap is empty. The heap remains unchanged. | <ul><li> **Min Heap:** peekMin(), the root is the smallest Integer </li><li> **Max Heap:** peekMax(), the root is the largest Integer </li></ul> |
